@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neymar Jr #10 Brazil — 4 Photoshoot Variations · 99 Jerseys</title>
+<style>
+  :root{
+    --bg:#fff; --ink:#0d1a2b; --muted:#67707c;
+    --line:#e5e7eb; --line-strong:#111;
+    --red:#e11d1d; --paypal:#ffc439; --sale:#e11d1d;
+    --font-sans:'Helvetica Neue',Arial,sans-serif;
+    --font-serif:Georgia,'Times New Roman',serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#f6f6f6;color:var(--ink);font-family:var(--font-sans);font-size:14px;line-height:1.4}
+  img{max-width:100%;display:block}
+
+  /* Header - mimic 99jerseys */
+  .topbar{background:#fff;border-bottom:1px solid var(--line);padding:14px 24px;display:flex;align-items:center;gap:24px;position:sticky;top:0;z-index:20}
+  .logo{font-family:'Impact','Anton',sans-serif;letter-spacing:.5px;font-size:26px;color:#111;text-transform:uppercase;white-space:nowrap}
+  .logo span{background:#111;color:#fff;padding:2px 8px;margin-right:2px}
+  .search{flex:1;max-width:520px;display:flex;border:2px solid #111;border-radius:2px;overflow:hidden}
+  .search input{flex:1;border:0;padding:8px 12px;outline:none;font-size:14px}
+  .search button{background:#111;color:#fff;border:0;padding:0 14px;cursor:pointer}
+  .topicons{display:flex;gap:16px;color:#111;align-items:center}
+  .topicons span{font-size:20px;cursor:pointer}
+
+  .subnav{background:#fff;border-bottom:1px solid var(--line);padding:0 24px;display:flex;gap:26px;align-items:center;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.5px;overflow-x:auto}
+  .subnav a{color:#111;text-decoration:none;padding:14px 0;display:inline-block;white-space:nowrap}
+  .subnav a.sale{color:var(--sale)}
+  .subnav .right{margin-left:auto;display:flex;gap:26px}
+
+  /* Container */
+  .wrap{max-width:1240px;margin:0 auto;padding:24px}
+
+  /* Intro */
+  .intro{background:#fff;border-radius:8px;padding:26px 28px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .intro h1{margin:0 0 8px;font-family:var(--font-serif);font-size:26px;font-weight:400}
+  .intro p{margin:0;color:#555;font-size:14px;max-width:820px}
+  .intro .nav-anchors{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+  .intro .nav-anchors a{background:#111;color:#fff;text-decoration:none;padding:8px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+  .intro .nav-anchors a:hover{background:#333}
+
+  /* Variation heading */
+  .var-heading{margin:40px 0 12px;padding:20px 28px;background:#111;color:#fff;border-radius:8px}
+  .var-heading .lbl{font-size:11px;letter-spacing:2px;color:#ffe14b;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+  .var-heading h2{margin:0;font-family:var(--font-serif);font-size:24px;font-weight:400}
+  .var-heading p{margin:8px 0 0;color:#c9cdd4;font-size:13px;max-width:820px}
+
+  /* PDP layout - the "above the fold" */
+  .pdp{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:28px}
+  .crumb{color:var(--muted);font-size:12px;margin-bottom:18px;text-transform:uppercase;letter-spacing:.5px}
+  .crumb b{color:#111}
+  .pdp-grid{display:grid;grid-template-columns:1fr 380px;gap:36px}
+  @media (max-width:900px){.pdp-grid{grid-template-columns:1fr}}
+
+  /* Left: gallery - MAIN + THUMBS below (like 99jerseys) */
+  .gallery-main{position:relative;background:#fafafa;border-radius:4px;overflow:hidden;aspect-ratio:3/4;cursor:zoom-in}
+  .gallery-main img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .gallery-main:hover img{transform:scale(1.02)}
+  .thumbs{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:12px}
+  .thumbs .thumb{aspect-ratio:3/4;border:2px solid transparent;border-radius:2px;background:#fafafa;overflow:hidden;cursor:pointer;transition:border-color .15s}
+  .thumbs .thumb:hover{border-color:#666}
+  .thumbs .thumb.active{border-color:#111}
+  .thumbs .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* Right: buy panel */
+  .buy .sale-badge{display:inline-block;background:var(--sale);color:#fff;padding:4px 10px;font-weight:800;letter-spacing:.5px;font-size:11px;border-radius:2px;text-transform:uppercase;margin-bottom:12px}
+  .buy h1{margin:0 0 6px;font-size:26px;letter-spacing:.5px}
+  .buy .subtitle{color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-size:12px;margin-bottom:16px}
+  .price{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+  .price .now{font-size:22px;font-weight:700;color:#111}
+  .price .was{color:#999;text-decoration:line-through;font-size:15px}
+  .size-chart{color:#3b7fd6;font-size:12px;margin-bottom:14px;text-decoration:underline;display:inline-block;cursor:pointer}
+  .sizes{display:flex;gap:0;border:1px solid #ddd;border-radius:2px;overflow:hidden;margin-bottom:16px;font-weight:700}
+  .sizes button{flex:1;background:#fff;border:0;border-right:1px solid #eee;padding:10px 0;cursor:pointer;font:inherit;color:#333}
+  .sizes button:last-child{border-right:0}
+  .sizes button.selected{background:#111;color:#fff}
+  .qty{display:flex;align-items:center;border:1px solid #ddd;padding:6px 10px;margin-bottom:12px;max-width:80px}
+  .qty select{border:0;outline:none;font:inherit;background:transparent;width:100%;cursor:pointer}
+  .btn{width:100%;border:0;padding:14px 0;font-weight:800;letter-spacing:.5px;font-size:14px;text-transform:uppercase;cursor:pointer;border-radius:2px;margin-bottom:8px}
+  .btn.red{background:var(--red);color:#fff}
+  .btn.red:hover{background:#c81616}
+  .btn.paypal{background:var(--paypal);color:#111;display:flex;align-items:center;justify-content:center;gap:4px}
+  .btn.paypal .p{font-style:italic;font-weight:900;color:#003087}
+  .btn.paypal .a{font-style:italic;font-weight:900;color:#009cde}
+  .afterpay{text-align:center;color:var(--muted);font-size:12px;margin-bottom:14px}
+  .delivery{background:#f4f4f4;padding:12px;border-radius:4px;font-size:12px;color:#333;margin-bottom:14px;line-height:1.6}
+  .delivery .truck{color:#3b7fd6;font-weight:700}
+  .delivery .stock{color:#0a8d33;font-weight:700}
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;text-align:center;font-size:11px;color:#333}
+  .features div{padding:8px 4px;border:1px solid #eee;border-radius:2px}
+  .features .icon{font-size:18px;margin-bottom:4px;display:block}
+  .accordion{border-top:1px solid #eee}
+  .accordion .row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #eee;font-weight:700;text-transform:uppercase;letter-spacing:.5px;font-size:12px;cursor:pointer}
+  .accordion .row span:last-child{color:var(--muted);font-weight:400;text-transform:none}
+
+  footer{text-align:center;padding:40px 0;color:var(--muted);font-size:12px}
+
+  /* Lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:90vw;max-height:90vh;object-fit:contain}
+  .lightbox .close{position:absolute;top:20px;right:24px;color:#fff;font-size:36px;cursor:pointer;background:none;border:none}
+</style>
+</head>
+<body>
+
+<!-- 99 Jerseys header -->
+<header class="topbar">
+  <div class="logo"><span>99</span>JERSEY</div>
+  <div class="search"><input placeholder="Search our store..." /><button>🔍</button></div>
+  <div class="topicons"><span>🛒</span><span>📞</span><span>👤</span></div>
+</header>
+<nav class="subnav">
+  <a href="#">World Cup Jerseys</a>
+  <a href="#">Custom</a>
+  <a href="#">Youth Jerseys</a>
+  <a href="#">Jerseys</a>
+  <a href="#">Apparel</a>
+  <a href="#">Accessories</a>
+  <a href="#" class="sale">SALE</a>
+  <div class="right">
+    <a href="#">Track Order</a>
+    <a href="#">Information</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- Intro card -->
+  <div class="intro">
+    <h1>Neymar Jr. #10 Brazil — 4 photoshoot variations</h1>
+    <p>Each concept below is a full above-the-fold product page. Click any thumbnail to swap the hero. Jerseys are AI-generated from the <a href="our-shirt.png" target="_blank">actual product reference</a> using GPT Image 2.</p>
+    <div class="nav-anchors">
+      <a href="#v1">01 · Studio Clean</a>
+      <a href="#v2">02 · Studio Multi-Angle</a>
+      <a href="#v3">03 · Brazilian Character</a>
+      <a href="#v4">04 · Matchday Golden Hour</a>
+    </div>
+  </div>
+
+  <!-- ============== VARIATION 1 ============== -->
+  <div id="v1" class="var-heading">
+    <div class="lbl">Variation 01</div>
+    <h2>Studio Clean · Adidas / Messi editorial style</h2>
+    <p>Pure white infinity backdrop. Front, back, side, hero-with-ball, macro fabric detail, and two ghost-mannequin product shots. Premium sportswear catalog polish.</p>
+  </div>
+  <section class="pdp" data-variation="1">
+    <div class="crumb">JERSEYS &nbsp;›&nbsp; SOCCER &nbsp;›&nbsp; BRAZIL &nbsp;›&nbsp; <b>NEYMAR JR. #10 BRAZIL HOME SOCCER JERSEY</b></div>
+    <div class="pdp-grid">
+      <div>
+        <div class="gallery-main"><img src="batch-1/1.webp" alt="Neymar Jr #10 Brazil jersey"/></div>
+        <div class="thumbs">
+          <div class="thumb active"><img src="batch-1/1.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-1/2.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-1/3.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-1/4.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-1/5.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-1/6.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-1/7.webp" alt=""/></div>
+        </div>
+      </div>
+      <aside class="buy">
+        <span class="sale-badge">July 4th Sale</span>
+        <h1>NEYMAR JR.</h1>
+        <div class="subtitle">#10 Brazil Home Soccer Jersey</div>
+        <div class="price"><span class="now">USD $54.99</span><span class="was">USD $100</span></div>
+        <a class="size-chart">Size chart ↗</a>
+        <div class="sizes"><button>S</button><button>M</button><button class="selected">L</button><button>XL</button><button>2XL</button><button>3XL</button></div>
+        <div class="qty"><select><option>1</option><option>2</option><option>3</option></select></div>
+        <button class="btn red">Add to Cart</button>
+        <button class="btn paypal"><span class="p">Pay</span><span class="a">Pal</span></button>
+        <div class="afterpay">Or 4 payments of USD $14 with afterpay⇗</div>
+        <div class="delivery">🚚 <span class="truck">Expected delivery Jul 9 – Jul 14</span><br><span class="stock">✓ In stock · Ready to ship</span></div>
+        <div class="features">
+          <div><span class="icon">🇺🇸</span>Ships From The USA</div>
+          <div><span class="icon">❤️</span>Love It Guarantee</div>
+          <div><span class="icon">↩️</span>90-Day Returns</div>
+          <div><span class="icon">✓</span>True US Sizes</div>
+        </div>
+        <div class="accordion">
+          <div class="row"><span>Returns</span><span>More ▾</span></div>
+          <div class="row"><span>Size Guide</span><span>More ▾</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============== VARIATION 2 ============== -->
+  <div id="v2" class="var-heading">
+    <div class="lbl">Variation 02</div>
+    <h2>Studio Multi-Angle · Nike / Barcelona back-heavy layout</h2>
+    <p>Same white studio but distance-varied around the back. Extreme back close-up, wide back, wide front, dynamic pose, plus ghost-front / ghost-back / macro-of-10 product-only shots.</p>
+  </div>
+  <section class="pdp" data-variation="2">
+    <div class="crumb">JERSEYS &nbsp;›&nbsp; SOCCER &nbsp;›&nbsp; BRAZIL &nbsp;›&nbsp; <b>NEYMAR JR. #10 BRAZIL HOME SOCCER JERSEY</b></div>
+    <div class="pdp-grid">
+      <div>
+        <div class="gallery-main"><img src="batch-2/1.webp" alt=""/></div>
+        <div class="thumbs">
+          <div class="thumb active"><img src="batch-2/1.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-2/2.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-2/3.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-2/4.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-2/5.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-2/6.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-2/7.webp" alt=""/></div>
+        </div>
+      </div>
+      <aside class="buy">
+        <span class="sale-badge">July 4th Sale</span>
+        <h1>NEYMAR JR.</h1>
+        <div class="subtitle">#10 Brazil Home Soccer Jersey</div>
+        <div class="price"><span class="now">USD $54.99</span><span class="was">USD $100</span></div>
+        <a class="size-chart">Size chart ↗</a>
+        <div class="sizes"><button>S</button><button>M</button><button class="selected">L</button><button>XL</button><button>2XL</button><button>3XL</button></div>
+        <div class="qty"><select><option>1</option><option>2</option><option>3</option></select></div>
+        <button class="btn red">Add to Cart</button>
+        <button class="btn paypal"><span class="p">Pay</span><span class="a">Pal</span></button>
+        <div class="afterpay">Or 4 payments of USD $14 with afterpay⇗</div>
+        <div class="delivery">🚚 <span class="truck">Expected delivery Jul 9 – Jul 14</span><br><span class="stock">✓ In stock · Ready to ship</span></div>
+        <div class="features">
+          <div><span class="icon">🇺🇸</span>Ships From The USA</div>
+          <div><span class="icon">❤️</span>Love It Guarantee</div>
+          <div><span class="icon">↩️</span>90-Day Returns</div>
+          <div><span class="icon">✓</span>True US Sizes</div>
+        </div>
+        <div class="accordion">
+          <div class="row"><span>Returns</span><span>More ▾</span></div>
+          <div class="row"><span>Size Guide</span><span>More ▾</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============== VARIATION 3 ============== -->
+  <div id="v3" class="var-heading">
+    <div class="lbl">Variation 03</div>
+    <h2>Brazilian Character · editorial lifestyle</h2>
+    <p>Warm cream studio backdrop. High-character model (long braids, mustache, tattoos). Seated poses, ball-holding, hem-pull detail — sells the vibe, not just the garment.</p>
+  </div>
+  <section class="pdp" data-variation="3">
+    <div class="crumb">JERSEYS &nbsp;›&nbsp; SOCCER &nbsp;›&nbsp; BRAZIL &nbsp;›&nbsp; <b>NEYMAR JR. #10 BRAZIL HOME SOCCER JERSEY</b></div>
+    <div class="pdp-grid">
+      <div>
+        <div class="gallery-main"><img src="batch-3/1.webp" alt=""/></div>
+        <div class="thumbs">
+          <div class="thumb active"><img src="batch-3/1.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-3/2.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-3/3.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-3/4.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-3/5.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-3/6.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-3/7.webp" alt=""/></div>
+        </div>
+      </div>
+      <aside class="buy">
+        <span class="sale-badge">July 4th Sale</span>
+        <h1>NEYMAR JR.</h1>
+        <div class="subtitle">#10 Brazil Home Soccer Jersey</div>
+        <div class="price"><span class="now">USD $54.99</span><span class="was">USD $100</span></div>
+        <a class="size-chart">Size chart ↗</a>
+        <div class="sizes"><button>S</button><button>M</button><button class="selected">L</button><button>XL</button><button>2XL</button><button>3XL</button></div>
+        <div class="qty"><select><option>1</option><option>2</option><option>3</option></select></div>
+        <button class="btn red">Add to Cart</button>
+        <button class="btn paypal"><span class="p">Pay</span><span class="a">Pal</span></button>
+        <div class="afterpay">Or 4 payments of USD $14 with afterpay⇗</div>
+        <div class="delivery">🚚 <span class="truck">Expected delivery Jul 9 – Jul 14</span><br><span class="stock">✓ In stock · Ready to ship</span></div>
+        <div class="features">
+          <div><span class="icon">🇺🇸</span>Ships From The USA</div>
+          <div><span class="icon">❤️</span>Love It Guarantee</div>
+          <div><span class="icon">↩️</span>90-Day Returns</div>
+          <div><span class="icon">✓</span>True US Sizes</div>
+        </div>
+        <div class="accordion">
+          <div class="row"><span>Returns</span><span>More ▾</span></div>
+          <div class="row"><span>Size Guide</span><span>More ▾</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============== VARIATION 4 ============== -->
+  <div id="v4" class="var-heading">
+    <div class="lbl">Variation 04</div>
+    <h2>Matchday Golden Hour · creative Rio street pitch</h2>
+    <p>Outdoor golden hour Rio street soccer. Motion, joy, dust in the air. Kicking, jumping, running, group cheer, tunnel entrance. Cinematic. Turns the product page into a story instead of a spec sheet.</p>
+  </div>
+  <section class="pdp" data-variation="4">
+    <div class="crumb">JERSEYS &nbsp;›&nbsp; SOCCER &nbsp;›&nbsp; BRAZIL &nbsp;›&nbsp; <b>NEYMAR JR. #10 BRAZIL HOME SOCCER JERSEY</b></div>
+    <div class="pdp-grid">
+      <div>
+        <div class="gallery-main"><img src="batch-4/1.webp" alt=""/></div>
+        <div class="thumbs" style="grid-template-columns:repeat(6,1fr)">
+          <div class="thumb active"><img src="batch-4/1.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-4/2.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-4/3.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-4/4.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-4/5.webp" alt=""/></div>
+          <div class="thumb"><img src="batch-4/6.webp" alt=""/></div>
+        </div>
+      </div>
+      <aside class="buy">
+        <span class="sale-badge">July 4th Sale</span>
+        <h1>NEYMAR JR.</h1>
+        <div class="subtitle">#10 Brazil Home Soccer Jersey</div>
+        <div class="price"><span class="now">USD $54.99</span><span class="was">USD $100</span></div>
+        <a class="size-chart">Size chart ↗</a>
+        <div class="sizes"><button>S</button><button>M</button><button class="selected">L</button><button>XL</button><button>2XL</button><button>3XL</button></div>
+        <div class="qty"><select><option>1</option><option>2</option><option>3</option></select></div>
+        <button class="btn red">Add to Cart</button>
+        <button class="btn paypal"><span class="p">Pay</span><span class="a">Pal</span></button>
+        <div class="afterpay">Or 4 payments of USD $14 with afterpay⇗</div>
+        <div class="delivery">🚚 <span class="truck">Expected delivery Jul 9 – Jul 14</span><br><span class="stock">✓ In stock · Ready to ship</span></div>
+        <div class="features">
+          <div><span class="icon">🇺🇸</span>Ships From The USA</div>
+          <div><span class="icon">❤️</span>Love It Guarantee</div>
+          <div><span class="icon">↩️</span>90-Day Returns</div>
+          <div><span class="icon">✓</span>True US Sizes</div>
+        </div>
+        <div class="accordion">
+          <div class="row"><span>Returns</span><span>More ▾</span></div>
+          <div class="row"><span>Size Guide</span><span>More ▾</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</div>
+
+<footer>Neymar Jr. #10 Brazil — concept mockup for 99 Jerseys · Photoshoot AI-generated with GPT Image 2 + reference photo</footer>
+
+<!-- Lightbox for zoom -->
+<div class="lightbox" id="lightbox"><button class="close">×</button><img src="" alt=""/></div>
+
+<script>
+  // Thumbnail click → swap hero
+  document.querySelectorAll('.pdp').forEach(pdp=>{
+    const main = pdp.querySelector('.gallery-main img');
+    pdp.querySelectorAll('.thumb').forEach(t=>{
+      t.addEventListener('click', ()=>{
+        const src = t.querySelector('img').src;
+        main.src = src;
+        pdp.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));
+        t.classList.add('active');
+      });
+    });
+  });
+
+  // Lightbox zoom
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('img');
+  document.querySelectorAll('.gallery-main').forEach(g=>{
+    g.addEventListener('click', ()=>{
+      lbImg.src = g.querySelector('img').src;
+      lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', ()=> lb.classList.remove('open'));
+
+  // Size buttons
+  document.querySelectorAll('.sizes').forEach(box=>{
+    box.querySelectorAll('button').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        box.querySelectorAll('button').forEach(x=>x.classList.remove('selected'));
+        b.classList.add('selected');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
