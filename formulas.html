@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>4 photoshoot formulas · 99 Jerseys · emotion layer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ground:#FAFAFA;
+    --panel:#FFFFFF;
+    --panel-warm:#F7F5F0;
+    --line:#E5E7EB;
+    --line-dark:#111827;
+    --text:#111111;
+    --text-2:#4A4A4A;
+    --muted:#7A7A7A;
+    --dim:#B0B0B0;
+    --red:#E11D1D;
+    --red-soft:#FCEAEA;
+    --yellow:#F5B800;
+    --yellow-soft:#FEF6D8;
+    --green:#0A8D33;
+    --green-soft:#E4F5EA;
+    --blue:#3B7FD6;
+    --blue-soft:#EAF1FB;
+
+    --font-display:'Anton', Impact, 'Arial Narrow Bold', sans-serif;
+    --font-body:'Manrope', -apple-system, "Segoe UI", system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--ground);
+    color:var(--text);
+    font:17px/1.7 var(--font-body);
+    letter-spacing:-0.005em;
+    -webkit-font-smoothing:antialiased;
+    padding:56px 48px 100px;
+    min-height:100vh;
+  }
+  @media (max-width:900px){ body{ padding:40px 20px 80px; font-size:16px; } }
+
+  .wrap{ max-width:1200px; margin:0 auto; }
+
+  /* ========== 99 JERSEYS-STYLE HEADER ========== */
+  .brand-bar{
+    display:flex; align-items:center; gap:16px; margin-bottom:36px;
+    padding-bottom:20px; border-bottom:1px solid var(--line);
+  }
+  .brand-logo{
+    font-family:var(--font-display); font-size:32px; color:var(--text);
+    letter-spacing:0.5px; line-height:1;
+  }
+  .brand-logo span{
+    background:var(--text); color:#fff; padding:4px 10px; margin-right:3px;
+    display:inline-block;
+  }
+  .brand-tag{
+    font-family:var(--font-mono); font-size:11px; color:var(--muted);
+    letter-spacing:2px; text-transform:uppercase;
+    padding-left:16px; border-left:1px solid var(--line);
+  }
+
+  /* ========== HERO ========== */
+  .eyebrow{
+    display:inline-block; background:var(--red); color:#fff;
+    font-family:var(--font-mono); font-size:12px; font-weight:600;
+    padding:6px 12px; letter-spacing:1.5px; text-transform:uppercase;
+    margin-bottom:20px;
+  }
+  h1{
+    font-family:var(--font-display); font-weight:400;
+    font-size:clamp(52px, 7vw, 96px); line-height:0.95;
+    letter-spacing:0.5px; margin:0 0 20px;
+    text-wrap:balance;
+    text-transform:uppercase;
+  }
+  h1 em{ font-style:normal; color:var(--red); }
+  .lede{
+    font-size:20px; color:var(--text-2); max-width:780px; line-height:1.6;
+    margin:0 0 32px;
+  }
+  .lede b{ color:var(--text); font-weight:700; }
+  .lede .k{ background:var(--yellow-soft); padding:2px 6px; border-radius:3px; font-weight:600; }
+
+  /* ========== BRAND VALUES BAR ========== */
+  .values{
+    display:flex; gap:0; margin-bottom:56px;
+    background:var(--text); border-radius:8px; overflow:hidden;
+  }
+  .values .v{
+    flex:1; padding:22px 24px; color:#fff; border-right:1px solid #2a2a2a;
+    display:flex; flex-direction:column; gap:4px;
+  }
+  .values .v:last-child{ border-right:none; }
+  .values .v .n{
+    font-family:var(--font-display); font-size:14px; color:var(--yellow);
+    letter-spacing:1.5px; line-height:1;
+  }
+  .values .v .k{
+    font-family:var(--font-display); font-size:28px; color:#fff;
+    line-height:1; letter-spacing:0.5px;
+  }
+  .values .v .d{ font-size:13px; color:#c9c9c9; line-height:1.4; }
+  @media (max-width:800px){ .values{ flex-direction:column; } .values .v{ border-right:none; border-bottom:1px solid #2a2a2a; } }
+
+  /* ========== FORMULA SECTION ========== */
+  .formula{ margin-bottom:80px; }
+  .f-head{
+    display:flex; align-items:flex-start; gap:20px;
+    padding-bottom:22px; margin-bottom:28px; border-bottom:2px solid var(--text);
+    flex-wrap:wrap;
+  }
+  .f-num{
+    font-family:var(--font-display); font-size:56px; line-height:1;
+    color:var(--red); letter-spacing:0;
+  }
+  .f-head-text{ flex:1; min-width:0; }
+  .f-title{
+    font-family:var(--font-display); font-weight:400;
+    font-size:44px; line-height:1; letter-spacing:0.5px;
+    text-transform:uppercase; margin:0 0 6px;
+  }
+  .f-tagline{
+    font-size:17px; color:var(--text-2); line-height:1.5; margin:0;
+    max-width:820px;
+  }
+
+  /* Fit score */
+  .brand-score{
+    display:inline-flex; align-items:baseline; gap:6px;
+    padding:8px 14px; border-radius:6px; background:var(--text); color:#fff;
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.5px; text-transform:uppercase;
+  }
+  .brand-score b{ font-family:var(--font-display); font-size:18px; color:var(--yellow); }
+
+  /* DNA BLOCK */
+  .dna{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:24px 28px; margin-bottom:36px;
+    box-shadow:0 1px 2px rgba(0,0,0,0.02);
+  }
+  .dna-lbl{
+    font-family:var(--font-display); font-size:22px; letter-spacing:0.5px;
+    text-transform:uppercase; margin-bottom:14px; color:var(--text);
+  }
+  .dna-lbl .n{ color:var(--red); }
+  .dna-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:14px;
+  }
+  .dna-item{
+    padding:12px 14px; background:var(--panel-warm);
+    border-radius:8px; border:1px solid var(--line);
+  }
+  .dna-item .k{
+    font-family:var(--font-mono); font-size:10px; color:var(--muted);
+    letter-spacing:1.5px; text-transform:uppercase; font-weight:600;
+    margin-bottom:4px; display:block;
+  }
+  .dna-item .v{ font-size:14.5px; color:var(--text); line-height:1.45; }
+
+  /* ========== SHOT CARD (photo + analysis) ========== */
+  .shots-lbl{
+    font-family:var(--font-display); font-size:22px; letter-spacing:0.5px;
+    text-transform:uppercase; margin:0 0 16px; color:var(--text);
+  }
+  .shots-lbl .n{ color:var(--red); }
+
+  .shot-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    overflow:hidden; margin-bottom:18px;
+    display:grid; grid-template-columns:340px 1fr;
+    box-shadow:0 1px 2px rgba(0,0,0,0.02);
+  }
+  @media (max-width:800px){ .shot-card{ grid-template-columns:1fr; } }
+  .shot-photo{
+    aspect-ratio:3/4; background:var(--panel-warm) center/cover no-repeat;
+    background-position:top;
+    border-right:1px solid var(--line);
+  }
+  @media (max-width:800px){ .shot-photo{ border-right:none; border-bottom:1px solid var(--line); aspect-ratio:3/4; } }
+
+  .shot-body{ padding:24px 28px; display:flex; flex-direction:column; gap:14px; }
+  .shot-head{
+    display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+  }
+  .shot-num{
+    font-family:var(--font-display); font-size:14px; letter-spacing:1.5px;
+    color:var(--red); background:var(--red-soft);
+    padding:4px 10px; border-radius:4px;
+  }
+  .shot-title{
+    font-family:var(--font-display); font-weight:400;
+    font-size:28px; letter-spacing:0.5px; text-transform:uppercase;
+    margin:0; line-height:1;
+  }
+  .shot-style{
+    color:var(--text-2); font-size:16px; line-height:1.55; margin:0;
+  }
+
+  /* Attribute chips */
+  .attrs{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:10px; margin-top:6px;
+  }
+  .attr{
+    padding:12px 14px; border-radius:8px;
+    background:var(--panel-warm); border:1px solid var(--line);
+  }
+  .attr .k{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px;
+    text-transform:uppercase; font-weight:600; display:block; margin-bottom:4px;
+  }
+  .attr.feeling .k{ color:var(--red); }
+  .attr.doing .k{ color:var(--text); }
+  .attr.vibe .k{ color:var(--blue); }
+  .attr.brand .k{ color:var(--green); }
+  .attr .v{ font-size:15px; color:var(--text); line-height:1.45; }
+  .attr.brand{ background:var(--green-soft); border-color:#bce4c9; }
+  .attr.brand .v{ font-weight:500; }
+  .attr.brand .score{
+    display:inline-block; font-family:var(--font-display); color:var(--green);
+    background:#fff; padding:1px 8px; border-radius:12px; font-size:14px;
+    margin-right:6px; letter-spacing:0.5px; border:1px solid #bce4c9;
+  }
+
+  /* ========== USE FOR ========== */
+  .use-for{
+    margin-top:28px; padding:20px 26px;
+    background:var(--yellow-soft); border-left:4px solid var(--yellow);
+    border-radius:0 10px 10px 0;
+  }
+  .use-for .k{
+    font-family:var(--font-display); font-size:18px; color:var(--text);
+    letter-spacing:0.5px; text-transform:uppercase; margin-bottom:6px;
+  }
+  .use-for p{ margin:0; color:var(--text); font-size:16px; line-height:1.55; }
+
+  /* ========== HOW TO REUSE ========== */
+  .reuse{
+    margin-top:60px; padding:36px 40px;
+    background:var(--text); color:#fff; border-radius:14px;
+    position:relative; overflow:hidden;
+  }
+  .reuse::before{
+    content:''; position:absolute; top:0; right:0; width:300px; height:100%;
+    background:radial-gradient(circle at 70% 50%, rgba(225,29,29,0.15), transparent 65%);
+    pointer-events:none;
+  }
+  .reuse h2{
+    font-family:var(--font-display); font-weight:400; font-size:42px;
+    text-transform:uppercase; letter-spacing:0.5px; margin:0 0 12px; line-height:1;
+  }
+  .reuse h2 em{ font-style:normal; color:var(--red); }
+  .reuse p{ margin:0 0 16px; color:#d9d9d9; font-size:17px; line-height:1.6; max-width:820px; }
+  .reuse ol{ margin:20px 0 0; padding-left:24px; color:#fff; font-size:16px; line-height:1.8; }
+  .reuse ol li{ padding-left:6px; margin-bottom:6px; }
+  .reuse ol li b{ color:var(--yellow); }
+
+  /* ========== FOOTER ========== */
+  footer{
+    margin-top:52px; padding-top:24px; border-top:1px solid var(--line);
+    color:var(--muted); font-family:var(--font-mono); font-size:11px;
+    letter-spacing:0.5px; text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- 99 JERSEYS-style header -->
+  <div class="brand-bar">
+    <div class="brand-logo"><span>99</span>JERSEY</div>
+    <div class="brand-tag">Photoshoot formulas · reverse-engineered from your batches</div>
+  </div>
+
+  <div class="eyebrow">4 formulas · emotion layer · 27 photo analyses</div>
+  <h1>Four <em>formulas</em>, one feeling: <br>fun, friends, family, not serious.</h1>
+  <p class="lede">
+    Every batch has two hidden layers. The <b>craft layer</b> — backdrop, lighting, model archetype, ladder of shots. And the <b>feeling layer</b> — what the person is doing, what emotion the camera catches, what the buyer feels when they see it. The 99 Jerseys brand isn't about clean product shots. It's about <span class="k">joy</span>, <span class="k">friendship</span>, <span class="k">family</span>, and playing the game with a smile. That's the layer we reverse-engineer here.
+  </p>
+
+  <div class="values">
+    <div class="v"><div class="n">Value 01</div><div class="k">Fun</div><div class="d">The reason we play in the first place.</div></div>
+    <div class="v"><div class="n">Value 02</div><div class="k">Friends</div><div class="d">Every match ends with an arm around a shoulder.</div></div>
+    <div class="v"><div class="n">Value 03</div><div class="k">Family</div><div class="d">The team is a tribe. The jersey is the crest.</div></div>
+    <div class="v"><div class="n">Value 04</div><div class="k">Not serious</div><div class="d">We're not the pros. We're the kids from the barrio, still.</div></div>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- ============== FORMULA 01 · STUDIO CLEAN ========== -->
+  <!-- ================================================== -->
+  <section class="formula">
+    <div class="f-head">
+      <span class="f-num">01</span>
+      <div class="f-head-text">
+        <h2 class="f-title">Studio Clean</h2>
+        <p class="f-tagline">Adidas / Messi polish. Clean white studio, one Brazilian model with subtle character, calm confident presence. Product-forward. Personal.</p>
+      </div>
+      <div class="brand-score">Brand fit &nbsp;<b>6/10</b></div>
+    </div>
+
+    <div class="dna">
+      <div class="dna-lbl">The <span class="n">DNA</span> · fixed across all shots</div>
+      <div class="dna-grid">
+        <div class="dna-item"><span class="k">Backdrop</span><span class="v">Pure white infinity</span></div>
+        <div class="dna-item"><span class="k">Lighting</span><span class="v">Soft diffused key, minimal shadow</span></div>
+        <div class="dna-item"><span class="k">Model</span><span class="v">Brazilian, curly hair, subtle character</span></div>
+        <div class="dna-item"><span class="k">Props</span><span class="v">White + green ball, black shorts</span></div>
+        <div class="dna-item"><span class="k">Framing</span><span class="v">3:4 portrait, 3/4-body dominant</span></div>
+        <div class="dna-item"><span class="k">Overall feel</span><span class="v">Quiet cool · personal · aspirational</span></div>
+      </div>
+    </div>
+
+    <div class="shots-lbl">The <span class="n">7-slot</span> ladder</div>
+
+    <!-- SHOT 01 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-1/1.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 01</span><h3 class="shot-title">Front 3/4 with ball at hip</h3></div>
+        <p class="shot-style">3/4 body, direct gaze at camera, ball tucked casually against his hip. Curly hair, small stud earring, slight facial hair. Confident but not showy.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Quiet confidence. "I know who I am." Not smiling for the camera.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Just holding the ball. Not playing yet. Ready.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">One-on-one, personal, catalog-hero.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">6</span>Aspirational but distant. Says "you'll look like this" — not "you'll feel like this."</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 02 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-1/2.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 02</span><h3 class="shot-title">Back over shoulder</h3></div>
+        <p class="shot-style">Same model turned, looking back over his right shoulder, name and number legible. Cinematic head tilt.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Subtle mystery. Reflective. Slightly aloof.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Turning back. Someone called his name — that name.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Cinematic identity moment. "This is who I am now."</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">7</span>Great identity moment. Missing the joy.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 03 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-1/3.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 03</span><h3 class="shot-title">Side profile 90°</h3></div>
+        <p class="shot-style">Pure side profile facing camera-right. Arms relaxed. Neutral face.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Emotionally flat. Anatomical.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Standing still. Being measured.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Clinical, technical, spec-sheet.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">4</span>Necessary for the catalog but says nothing about the brand.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 04 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-1/4.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 04</span><h3 class="shot-title">Ball at chest, both hands</h3></div>
+        <p class="shot-style">Front-facing, ball held with both hands at chest, subtle warm smile — the closest we get to a smile in this batch.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Small warmth. Almost-smile. The kid-with-a-ball moment leaks through.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Cradling the ball like it means something. About to play.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Anticipation. Playful undertone.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">7</span>The most on-brand of the studio shots. Would score higher with a bigger smile.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 05 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-1/5.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 05</span><h3 class="shot-title">Fabric macro</h3></div>
+        <p class="shot-style">Extreme close-up of the mesh weave and green trim edge. Just fabric, no model.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Reverence for craft. Tactile.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Showing the material honestly.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Quiet, respectful, technical.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">5</span>Trust-building for buyers who care about quality. Neutral on emotion.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 06 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-1/6.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 06</span><h3 class="shot-title">Ghost front · pure white</h3></div>
+        <p class="shot-style">Product-only, hovering, on pure white. Full front detail visible.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Impersonal. Product on display.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Nothing. Waiting to be worn.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">E-commerce clarity.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">6</span>Every store needs one. Necessary but not the point.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 07 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-1/7.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 07</span><h3 class="shot-title">Ghost back · pure black</h3></div>
+        <p class="shot-style">Product-only from behind, dramatic pure black backdrop, side rim light emphasizing name and number.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Monument. The name becomes iconic.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Nothing. But feels like something.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Museum piece. Cathedral lighting.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">7</span>Great for the collector-buyer. A bit too serious for casual fans.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="use-for">
+      <div class="k">Use for</div>
+      <p>Premium spec-driven SKUs. Any product where the buyer needs to see it clean, all angles, no distractions. Perfect as the trust-establishing baseline batch. Pair with Formula 04 for the emotion layer.</p>
+    </div>
+  </section>
+
+  <!-- ================================================== -->
+  <!-- ============== FORMULA 02 · MULTI-ANGLE ========= -->
+  <!-- ================================================== -->
+  <section class="formula">
+    <div class="f-head">
+      <span class="f-num">02</span>
+      <div class="f-head-text">
+        <h2 class="f-title">Multi-Angle Back-Heavy</h2>
+        <p class="f-tagline">Nike / Barcelona clinical. Same clean studio, but every angle covered, back-focused. Model with tight-fade haircut, athletic prop set. Optimized for name-and-number driven purchases.</p>
+      </div>
+      <div class="brand-score">Brand fit &nbsp;<b>5/10</b></div>
+    </div>
+
+    <div class="dna">
+      <div class="dna-lbl">The <span class="n">DNA</span> · fixed across all shots</div>
+      <div class="dna-grid">
+        <div class="dna-item"><span class="k">Backdrop</span><span class="v">Pure white + one pure black ghost</span></div>
+        <div class="dna-item"><span class="k">Lighting</span><span class="v">Flat even, product-forward</span></div>
+        <div class="dna-item"><span class="k">Model</span><span class="v">Brazilian, tight fade, clean-cut, no expression drama</span></div>
+        <div class="dna-item"><span class="k">Props</span><span class="v">Black knee socks, cleats, black shorts</span></div>
+        <div class="dna-item"><span class="k">Framing</span><span class="v">3:4 · full-body distance dominant</span></div>
+        <div class="dna-item"><span class="k">Overall feel</span><span class="v">Clinical · reserved · spec-first</span></div>
+      </div>
+    </div>
+
+    <div class="shots-lbl">The <span class="n">7-slot</span> ladder</div>
+
+    <!-- SHOT 01 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-2/1.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 01</span><h3 class="shot-title">Full back standing</h3></div>
+        <p class="shot-style">Model back to camera, standing straight, name and number center. Socks pulled up, arms at sides.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Reserved. At attention.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Nothing. Presenting the back.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Ready-for-inspection. Almost military.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">4</span>Sells the print detail. Doesn't sell the joy.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 02 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-2/2.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 02</span><h3 class="shot-title">Full front standing</h3></div>
+        <p class="shot-style">Same model face-forward, arms relaxed, neutral gaze. Clean catalog framing.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Neutral. Calm. Almost cold.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Standing, presenting the fit.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Catalog-clean. Fit-check.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">5</span>Fine as a size reference. Nothing more.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 03 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-2/3.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 03</span><h3 class="shot-title">Wide walking motion</h3></div>
+        <p class="shot-style">Model in mid-walk pose, one foot forward, torso slightly turned. Cleats visible.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Purposeful. Focused. About to play.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Walking on the pitch. Pre-match warmup.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Gentle motion. Feels natural despite the studio.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">6</span>Shows the fit in motion. Still missing warmth.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 04 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-2/4.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 04</span><h3 class="shot-title">Ghost front · white</h3></div>
+        <p class="shot-style">Product only, on white. Standard e-commerce ghost.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">None. Product.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Waiting.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Clean e-comm baseline.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">6</span>Every store needs one.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 05 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-2/5.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 05</span><h3 class="shot-title">Ghost back · black</h3></div>
+        <p class="shot-style">Product from behind, dramatic pure black backdrop.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Iconic. Monument.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Nothing. Being seen.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Cathedral lighting. Serious.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">6</span>Reads as "collectible." Too serious for casual buyers.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 06 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-2/6.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 06</span><h3 class="shot-title">Extreme macro of "10"</h3></div>
+        <p class="shot-style">Super close-up of the number 10, showing embroidery / print detail on the mesh.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Reverence for craft. The number as a symbol.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Displaying the detail up close.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Craftsmanship. Trust.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">7</span>Says "we care about the details." That's a promise buyers hear.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 07 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-2/7.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 07</span><h3 class="shot-title">Extreme back close-up</h3></div>
+        <p class="shot-style">Cropped from cropped-fade hairline down to top of number "10". Skin and jersey close together.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Intimate. Close to the person, not just the jersey.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Still. Close-in portrait.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Portrait meets product.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">7</span>Says "when you wear this, YOU become the name." Identity transfer.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="use-for">
+      <div class="k">Use for</div>
+      <p>Products where the back-of-item detail is the differentiator: jerseys with names, custom-printed apparel, engraved goods. Great for the "collector" buyer. Weak for the "fan having fun" buyer.</p>
+    </div>
+  </section>
+
+  <!-- ================================================== -->
+  <!-- ============== FORMULA 03 · CHARACTER ============ -->
+  <!-- ================================================== -->
+  <section class="formula">
+    <div class="f-head">
+      <span class="f-num">03</span>
+      <div class="f-head-text">
+        <h2 class="f-title">Brazilian Character</h2>
+        <p class="f-tagline">Editorial lifestyle. Warm cream studio, models with braids and mustaches and tattoos, vintage brown leather ball. Sells the identity, not the spec. This is where the jersey becomes cultural.</p>
+      </div>
+      <div class="brand-score">Brand fit &nbsp;<b>8/10</b></div>
+    </div>
+
+    <div class="dna">
+      <div class="dna-lbl">The <span class="n">DNA</span> · fixed across all shots</div>
+      <div class="dna-grid">
+        <div class="dna-item"><span class="k">Backdrop</span><span class="v">Warm cream / beige seamless</span></div>
+        <div class="dna-item"><span class="k">Lighting</span><span class="v">Warm directional side, cinematic falloff</span></div>
+        <div class="dna-item"><span class="k">Model</span><span class="v">Braids or dreads · mustache · tattoos · character-heavy</span></div>
+        <div class="dna-item"><span class="k">Props</span><span class="v">Vintage brown leather ball · cargo pants · sneakers</span></div>
+        <div class="dna-item"><span class="k">Framing</span><span class="v">3:4 · mix of seated + standing</span></div>
+        <div class="dna-item"><span class="k">Overall feel</span><span class="v">Rooted · reflective · culturally on-brand</span></div>
+      </div>
+    </div>
+
+    <div class="shots-lbl">The <span class="n">7-slot</span> ladder</div>
+
+    <!-- SHOT 01 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-3/1.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 01</span><h3 class="shot-title">Back macro with braids</h3></div>
+        <p class="shot-style">Extreme close-up of the back of the neck and braids. NEYMAR JR text prominent. Warm cream light.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Cultural pride. The braids and the name in the same frame.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Standing still. Being witnessed.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Identity as heritage.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">8</span>Says "this jersey belongs to a culture, not a corporation."</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 02 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-3/2.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 02</span><h3 class="shot-title">Portrait 3/4 · vintage ball</h3></div>
+        <p class="shot-style">Character-heavy model with long braids and a thin mustache. Holds a vintage brown leather ball at his hip. Slight smirk. Direct gaze.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Knowing smirk. "I've been playing this game my whole life."</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Casually posing with a ball he grew up with.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Throwback. Respect for the old-school game.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">9</span>The vintage ball says "we honor the game's roots." That's on-brand for a fan store.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 03 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-3/3.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 03</span><h3 class="shot-title">Full body wide · lifestyle outfit</h3></div>
+        <p class="shot-style">Standing tall in olive cargo pants + white sneakers + hem untucked. Braids down. Cool detachment.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Cool detachment. Streetwear energy. Off-pitch.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Standing around. Hanging out. Not playing.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Everyday wear. This isn't just for the pitch.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">8</span>Sells "wear this to hang out with your friends, not just to play."</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 04 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-3/4.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 04</span><h3 class="shot-title">Seated cross-legged with ball, head down</h3></div>
+        <p class="shot-style">Sitting on the floor, cross-legged, cradling the vintage brown ball with both hands. Head down. Braids falling forward.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Reverent. Prayer-like. Before-the-match moment.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Cradling the ball. Thinking. Getting ready.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Sacred. The ball as ritual object.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">7</span>Beautiful but reads as too-serious for the 99 Jerseys "fun" pillar.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 05 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-3/5.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 05</span><h3 class="shot-title">Back turn over shoulder</h3></div>
+        <p class="shot-style">Character model with braids turns, looking over his shoulder. Tattoos visible on his arm. Beard.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Cool, cinematic, character-forward.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Looking back mid-motion. Something caught his eye.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Fashion editorial meets fan.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">8</span>Individuality. The tattoos say "this is my life, and this jersey is part of it."</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 06 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-3/6.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 06</span><h3 class="shot-title">Chin-to-hem, hands pulling</h3></div>
+        <p class="shot-style">Close-up cropped from chin to hem. Long fingers gently pulling the hem to display the number 10.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Playful pride. "Check it out." Slightly show-off.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Pulling the hem to show the number. Basically flexing.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Show-and-tell. Warm. Confident.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">8</span>Excitement to wear it. That's the buyer's own feeling projected.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 07 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-3/7.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 07</span><h3 class="shot-title">Seated on floor, one arm extended</h3></div>
+        <p class="shot-style">Model sitting on studio floor, tattooed forearm extended for balance, casual lean. Braids swept across face.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Relaxed. After-the-game chill.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Nothing. Just sitting. Being.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Editorial lounge. Post-match cool.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">7</span>Says the jersey is comfortable enough to just chill in.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="use-for">
+      <div class="k">Use for</div>
+      <p>Culturally-loaded products where the buyer isn't buying a spec, they're buying an identity. Streetwear, fan gear, artisan goods. Formula 03 turns the jersey into a badge of who you are.</p>
+    </div>
+  </section>
+
+  <!-- ================================================== -->
+  <!-- ============== FORMULA 04 · MATCHDAY ============= -->
+  <!-- ================================================== -->
+  <section class="formula">
+    <div class="f-head">
+      <span class="f-num">04</span>
+      <div class="f-head-text">
+        <h2 class="f-title">Matchday Golden Hour</h2>
+        <p class="f-tagline">Rio street pitch. Sun flare, dust, favela behind. Documentary photojournalism. Motion, joy, friendship. This is the batch that IS the 99 Jerseys brand.</p>
+      </div>
+      <div class="brand-score">Brand fit &nbsp;<b>10/10</b></div>
+    </div>
+
+    <div class="dna">
+      <div class="dna-lbl">The <span class="n">DNA</span> · fixed across all shots</div>
+      <div class="dna-grid">
+        <div class="dna-item"><span class="k">Backdrop</span><span class="v">Rio street pitch · favela · graffiti · mountains</span></div>
+        <div class="dna-item"><span class="k">Lighting</span><span class="v">Golden hour · warm backlight · sun flare</span></div>
+        <div class="dna-item"><span class="k">Model</span><span class="v">Multiple Brazilian friends · varied skin tones and hair</span></div>
+        <div class="dna-item"><span class="k">Props</span><span class="v">Worn ball · black shorts · sneakers or cleats</span></div>
+        <div class="dna-item"><span class="k">Framing</span><span class="v">3:4 · action + emotion · motion blur allowed</span></div>
+        <div class="dna-item"><span class="k">Overall feel</span><span class="v">JOY · FRIENDSHIP · not-serious · Brazilian street soccer</span></div>
+      </div>
+    </div>
+
+    <div class="shots-lbl">The <span class="n">6-slot</span> ladder</div>
+
+    <!-- SHOT 01 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-4/1.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 01</span><h3 class="shot-title">Jump celebrate, favela behind</h3></div>
+        <p class="shot-style">Model mid-air, both fists raised, mouth wide open in a celebratory shout. Sunset behind. Favela sprawling on the hillside. Dust rising from his feet.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">PURE JOY. The moment of a goal. Nothing else exists.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Celebrating. Shouting. Alive.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">This is why we play. This is the moment the whole game is about.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">10</span>This IS 99 Jerseys' brand promise in one image. Fun. Emotional. Real. Not-serious in the best way.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 02 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-4/2.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 02</span><h3 class="shot-title">Laughing portrait with worn ball</h3></div>
+        <p class="shot-style">Genuine open-mouth laugh, teeth showing, eyes crinkled. Worn dirty leather ball tucked under his arm. Palm trees soft-focus behind. Dust particles catching the sun.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Genuine, uncontrollable laugh. Someone off-camera said something.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Just standing with his friends, laughing. Between plays.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Warm. Human. A friend caught mid-moment.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">10</span>This is FRIENDSHIP in one frame. The buyer wants to feel like this. Not to look serious, to feel this.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 03 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-4/3.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 03</span><h3 class="shot-title">Back running down the pitch</h3></div>
+        <p class="shot-style">Back view, running away from camera down a cracked concrete pitch. NEYMAR JR + 10 clearly readable. Brazil flag mural to the left. Favela climbing the hill in the background. Long golden-hour shadow trailing.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Focused determination, but with lightness. Chasing something worth chasing.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Running toward the play. Full stride. Feet off the ground.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">The barrio in one frame. Brazil flag, favela, cracked pavement, warm sun.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">9</span>The buyer sees this and thinks "that's where I want to be playing." Full brand delivery.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 04 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-4/4.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 04</span><h3 class="shot-title">Neck close-up with sweat</h3></div>
+        <p class="shot-style">Extreme close-up from below the chin to the top of the "10" number. Sweat beads catching the golden light. Curly hair dampened at the edges.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Exhaustion in a good way. Real effort. Caught his breath.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Standing between plays. Just breathed hard.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Physical, honest. Sweat as proof of play.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">8</span>Says "this was USED." The jersey is a working object, not a display piece.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 05 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-4/5.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 05</span><h3 class="shot-title">Three friends arm-in-arm</h3></div>
+        <p class="shot-style">Three young Brazilian men, arms around each other, all laughing. Curly, dreads, cropped. All wearing the jersey. One turned to show NEYMAR JR on the back. Rio mountains and favela in the sunset behind.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Brotherhood. Post-match euphoria. Real friendship.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Hanging together after the game. Laughing at each other.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">The tribe. The reason the game exists. Family who chose each other.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">10</span>This is FAMILY. This is not-serious. This is 99 Jerseys' four brand values in one photo.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 06 -->
+    <div class="shot-card">
+      <div class="shot-photo" style="background-image:url('batch-4/6.webp')"></div>
+      <div class="shot-body">
+        <div class="shot-head"><span class="shot-num">Slot 06</span><h3 class="shot-title">Kicking action, RIO graffiti</h3></div>
+        <p class="shot-style">Mid-strike, one foot connecting with the ball, motion blur on the leg. Sun flare from the left. "RIO" spray-painted on the graffiti wall behind him.</p>
+        <div class="attrs">
+          <div class="attr feeling"><span class="k">Feeling</span><span class="v">Focus with joy underneath. Committed to the play, but this is street soccer, not the World Cup.</span></div>
+          <div class="attr doing"><span class="k">Doing</span><span class="v">Striking the ball. Real motion.</span></div>
+          <div class="attr vibe"><span class="k">Vibe</span><span class="v">Street context. Not the Maracana. The wall behind him is real.</span></div>
+          <div class="attr brand"><span class="k">Brand fit</span><span class="v"><span class="score">9</span>The buyer plays on cracked concrete too. This is his reality, not his fantasy.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="use-for">
+      <div class="k">Use for</div>
+      <p>Emotional-purchase products where the buyer is buying a feeling, not a spec. Launch campaigns, hero shots, social ads, homepage banners. Formula 04 is the batch that makes 99 Jerseys' brand feel real. Every product line needs at least 2 shots from this formula in the mix.</p>
+    </div>
+  </section>
+
+  <!-- HOW TO REUSE -->
+  <div class="reuse">
+    <h2>How to <em>MIX</em> the formulas for a full catalog</h2>
+    <p>Don't pick one formula. Mix them. For every product, run some slots from each formula to get the full emotional range. Buyers scroll fast — you need trust shots (Formula 01), fit shots (Formula 02), identity shots (Formula 03), AND feeling shots (Formula 04) so no matter what caught their eye, something lands.</p>
+    <ol>
+      <li><b>2 shots from Formula 04</b> to open the PDP. This is what stops the scroll. Joy first.</li>
+      <li><b>2 shots from Formula 01</b> for the clean product-view. Trust.</li>
+      <li><b>1 shot from Formula 02</b> for the back-detail macro. Prove the print quality.</li>
+      <li><b>1 shot from Formula 03</b> for the lifestyle / off-pitch context. This isn't just for the game.</li>
+      <li><b>1 ghost front + 1 ghost back</b> as the closer, for e-commerce sanity.</li>
+    </ol>
+    <p style="margin-top:20px">= 8 shots per product, 4 emotional registers covered, every kind of buyer served.</p>
+  </div>
+
+  <footer>
+    99 Jerseys · photoshoot formula pack · 27 shots reverse-engineered · 4 formulas, one feeling · 2026-07-08
+  </footer>
+
+</div>
+
+</body>
+</html>
